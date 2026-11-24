@@ -1,41 +1,34 @@
-# Compiled Lua sources
-luac.out
+# Roblox Studio & Rojo build artifacts
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+*.lock.json
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+# Wally package manager
+Packages/
+DevPackages/
+ServerPackages/
+wally.lock
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+# Luau LSP / toolchain caches
+.luaurc
+.lune/
+.aftman/
+.rokit/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Editors & IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+# OS artifacts
+.DS_Store
+Thumbs.db
+Desktop.ini
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+# Logs & temporary files
+*.log
+*.tmp
+*.bak
