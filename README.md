@@ -6,13 +6,13 @@ To use in plain Lua projects, you will need to strip Luau type annotations (`--!
 
 ## Modules (`src/scxr/`)
 
-- `init.luau` — Entry point re-exporting the modules.
-- `Trigintaduonions.luau` — Core 32D trigintaduonion operations and types.
-- `AlgebraTools.luau` — Associators, commutators, Jordan/Akivis/Moufang checks, nullspace solvers, zero divisors, and box-kites.
-- `Spring.luau`, `TrigintaduonionsSpring.luau`, `GeodesicSpring.luau`, `RadianSpring.luau` — Analytical damped spring modules.
-- `Bridge.luau` — Conversions between trigintaduonions, `Vector3`, `CFrame`, and quaternion-like tables.
-- `BufferRemote.luau` — `buffer` serialization helpers for networking.
-- `Benchmarks.luau` — Benchmark scripts.
+- `init.luau` : Entry point re-exporting the modules.
+- `Trigintaduonions.luau` : Core 32D trigintaduonion operations and types.
+- `AlgebraTools.luau` : Associators, commutators, Jordan/Akivis/Moufang checks, nullspace solvers, zero divisors, and box-kites.
+- `Spring.luau`, `TrigintaduonionsSpring.luau`, `GeodesicSpring.luau`, `RadianSpring.luau` : Analytical damped spring modules.
+- `Bridge.luau` : Conversions between trigintaduonions, `Vector3`, `CFrame`, and quaternion-like tables.
+- `BufferRemote.luau` : `buffer` serialization helpers for networking.
+- `Benchmarks.luau` : Benchmark scripts.
 
 ## Important Notes
 
