@@ -11,7 +11,7 @@
 ▐▒▒      ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒      ▐▒▒
 ▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
 ▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
-▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
+▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
  ▐▓▓▓▓▓   ▐▓▓▓▓▓  ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓▓▓▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓▓▒▒    ▐▓▓▓▓▓    ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓   ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓▓▓▓▓ 
 
 BufferRemote -- Buffered network transport helpers.
@@ -167,7 +167,8 @@ local function writeValue(w: Writer, val: any, f64: boolean, depth: number)
 		end
 	elseif t == "string" then
 		local s = val :: string
-		local len = math.min(#s, MAX_STRING_BYTES)
+		local len = #s
+		assert(len <= MAX_STRING_BYTES, `BufferRemote: string exceeds max byte length ({MAX_STRING_BYTES})`)
 		writeU8(w, TAG_STRING)
 		writeU16(w, len)
 		ensure(w, len)
@@ -249,7 +250,7 @@ local function canRead(r: Reader, bytes: number): boolean
 end
 
 local function readValue(r: Reader, f64: boolean, depth: number): (boolean, any)
-	if depth > MAX_DEPTH or not canRead(r, 1) then
+	if depth >= MAX_DEPTH or not canRead(r, 1) then
 		return false, nil
 	end
 
@@ -362,7 +363,7 @@ local function readValue(r: Reader, f64: boolean, depth: number): (boolean, any)
 			end
 			r.cursor += stride
 		end
-		return true, Trigintaduonions.new(components)
+		return true, Trigintaduonions.fromArray(components)
 	elseif tag == TAG_TABLE then
 		if not canRead(r, 2) then
 			return false, nil
@@ -491,27 +492,33 @@ function BufferRemote.ConnectServer(self: BufferRemote, callback: (player: Playe
 	local f64 = self._f64
 	return remote.OnServerEvent:Connect(function(player: Player, data: unknown)
 		if typeof(data) ~= "buffer" then
+			warn(`BufferRemote: ConnectServer ignored non-buffer payload from player '{player.Name}' ({typeof(data)})`)
 			return
 		end
 		local ok, args, count = unpackArgs(f64, data)
-		if ok then
-			callback(player, table.unpack(args, 1, count))
+		if not ok then
+			warn(`BufferRemote: ConnectServer failed to unpack payload from player '{player.Name}'`)
+			return
 		end
+		callback(player, table.unpack(args, 1, count))
 	end)
 end
 
 function BufferRemote.ConnectClient(self: BufferRemote, callback: (...any) -> ()): RBXScriptConnection
-	assert(RunService:IsClient(), "BufferRemote: ConnectClient can only be called from the client")
+	assert(RunService:IsClient(), "BufferRemote: ConnectClient can only be called from the client LMFAO")
 	local remote = self.Remote :: RemoteEvent
 	local f64 = self._f64
 	return remote.OnClientEvent:Connect(function(data: unknown)
 		if typeof(data) ~= "buffer" then
+			warn(`BufferRemote: ConnectClient ignored non-buffer payload ({typeof(data)})`)
 			return
 		end
 		local ok, args, count = unpackArgs(f64, data)
-		if ok then
-			callback(table.unpack(args, 1, count))
+		if not ok then
+			warn("BufferRemote: ConnectClient failed to unpack payload!!")
+			return
 		end
+		callback(table.unpack(args, 1, count))
 	end)
 end
 

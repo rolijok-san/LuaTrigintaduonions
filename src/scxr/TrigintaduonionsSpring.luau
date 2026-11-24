@@ -11,13 +11,13 @@
 ▐▒▒      ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒      ▐▒▒
 ▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
 ▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
-▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
+▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
  ▐▓▓▓▓▓   ▐▓▓▓▓▓  ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓▓▓▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓▓▒▒    ▐▓▓▓▓▓    ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓   ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓▓▓▓▓ 
 
 32-dimensional hypercomplex numbers (trigintaduonions / pathions), algebra tools,
 and harmonic/geodesic springs in Luau.
 
-Created by CRIMOFD (2025). Released under the MIT License.
+Created by CRIMOFD (2026). Released under the MIT License.
 
 Developed alongside academic thesis work; this package is
 provided independently without official university endorsement or warranty.
@@ -34,8 +34,12 @@ local DIM = Trigintaduonions.Dimension
 local ERROR_FORMAT = "%q is not a valid member of TrigintaduonionsSpring."
 local ZERO_VELOCITY = Trigintaduonions.new()
 
-local SCRATCH_POS: { number } = table.create(DIM, 0)
-local SCRATCH_VEL: { number } = table.create(DIM, 0)
+-- Module-level scratch buffers for zero-allocation spring evaluation and impulses.
+local EVAL_POS_ARRAY: { number } = table.create(DIM, 0)
+local EVAL_VEL_ARRAY: { number } = table.create(DIM, 0)
+local EVAL_POS_TRIG: Trigintaduonion = Trigintaduonions.fromArray(EVAL_POS_ARRAY)
+local EVAL_VEL_TRIG: Trigintaduonion = Trigintaduonions.fromArray(EVAL_VEL_ARRAY)
+local IMPULSE_VEL_TRIG: Trigintaduonion = Trigintaduonions.new()
 
 export type TrigintaduonionsSpring = {
 	Position: Trigintaduonion,
@@ -65,6 +69,8 @@ export type TrigintaduonionsSpring = {
 	_cachedTime: number,
 	_cachedPosition: Trigintaduonion,
 	_cachedVelocity: Trigintaduonion,
+	_statePosBuf: Trigintaduonion,
+	_stateVelBuf: Trigintaduonion,
 }
 
 local TrigintaduonionsSpring = {} :: {
@@ -84,16 +90,18 @@ local TrigintaduonionsSpring = {} :: {
 
 TrigintaduonionsSpring._type = "TrigintaduonionsSpring"
 
-local function evaluateTrigintaduonionState(
+local function evaluateTrigintaduonionStateInto(
+	outPos: { number },
+	outVel: { number },
 	currentPosition: Trigintaduonion,
 	currentVelocity: Trigintaduonion,
 	targetPosition: Trigintaduonion,
 	dampingFactor: number,
 	speed: number,
 	dt: number
-): (Trigintaduonion, Trigintaduonion)
+): boolean
 	if dt <= 0 or speed <= 0 then
-		return currentPosition, currentVelocity
+		return false
 	end
 
 	local deltaTime = speed * dt
@@ -127,11 +135,11 @@ local function evaluateTrigintaduonionState(
 		local pi = currentPosition[i]
 		local vi = currentVelocity[i]
 		local ti = targetPosition[i]
-		SCRATCH_POS[i] = pi * positionDecay + ti * pullToTarget + vi * velPosPush
-		SCRATCH_VEL[i] = (ti - pi) * velPushRate + vi * velocityDecay
+		outPos[i] = pi * positionDecay + ti * pullToTarget + vi * velPosPush
+		outVel[i] = (ti - pi) * velPushRate + vi * velocityDecay
 	end
 
-	return Trigintaduonions.new(SCRATCH_POS), Trigintaduonions.new(SCRATCH_VEL)
+	return true
 end
 
 local function _positionVelocity(
@@ -143,7 +151,9 @@ local function _positionVelocity(
 		return rawSelf._cachedPosition :: Trigintaduonion, rawSelf._cachedVelocity :: Trigintaduonion
 	end
 
-	local newPosition, newVelocity = evaluateTrigintaduonionState(
+	local stepped = evaluateTrigintaduonionStateInto(
+		EVAL_POS_ARRAY,
+		EVAL_VEL_ARRAY,
 		rawSelf._position,
 		rawSelf._velocity,
 		rawSelf._target,
@@ -152,11 +162,23 @@ local function _positionVelocity(
 		now - rawSelf._time
 	)
 
-	rawSelf._cachedTime = now
-	rawSelf._cachedPosition = newPosition
-	rawSelf._cachedVelocity = newVelocity
+	if not stepped then
+		rawSelf._cachedTime = now
+		rawSelf._cachedPosition = rawSelf._position
+		rawSelf._cachedVelocity = rawSelf._velocity
+		return rawSelf._position :: Trigintaduonion, rawSelf._velocity :: Trigintaduonion
+	end
 
-	return newPosition, newVelocity
+	local posBuf: Trigintaduonion = rawSelf._statePosBuf
+	local velBuf: Trigintaduonion = rawSelf._stateVelBuf
+	Trigintaduonions.copyInto(posBuf, EVAL_POS_TRIG)
+	Trigintaduonions.copyInto(velBuf, EVAL_VEL_TRIG)
+
+	rawSelf._cachedTime = now
+	rawSelf._cachedPosition = posBuf
+	rawSelf._cachedVelocity = velBuf
+
+	return posBuf, velBuf
 end
 
 function TrigintaduonionsSpring.new(
@@ -171,6 +193,10 @@ function TrigintaduonionsSpring.new(
 	local l_clock = clock or os.clock
 	local now = l_clock()
 
+	local statePosBuf = Trigintaduonions.new()
+	local stateVelBuf = Trigintaduonions.new()
+	Trigintaduonions.copyInto(statePosBuf, l_initial)
+
 	local self = {
 		_clock = l_clock,
 		_time = now,
@@ -183,6 +209,8 @@ function TrigintaduonionsSpring.new(
 		_cachedTime = now,
 		_cachedPosition = l_initial,
 		_cachedVelocity = ZERO_VELOCITY,
+		_statePosBuf = statePosBuf,
+		_stateVelBuf = stateVelBuf,
 	}
 
 	return (setmetatable(self, TrigintaduonionsSpring) :: any) :: TrigintaduonionsSpring
@@ -208,14 +236,15 @@ local function Impulse(self: TrigintaduonionsSpring, velocity: Trigintaduonion)
 	local now = rawSelf._clock()
 	local pos, vel = _positionVelocity(self, now)
 
-	local nextVel = vel + velocity
+	Trigintaduonions.addInto(IMPULSE_VEL_TRIG, vel, velocity)
+	Trigintaduonions.copyInto(rawSelf._stateVelBuf, IMPULSE_VEL_TRIG)
 
 	rawSelf._position = pos
-	rawSelf._velocity = nextVel
+	rawSelf._velocity = rawSelf._stateVelBuf
 	rawSelf._time = now
 	rawSelf._cachedTime = now
 	rawSelf._cachedPosition = pos
-	rawSelf._cachedVelocity = nextVel
+	rawSelf._cachedVelocity = rawSelf._stateVelBuf
 end
 
 TrigintaduonionsSpring.Impulse = Impulse
@@ -224,12 +253,14 @@ local function TimeSkip(self: TrigintaduonionsSpring, delta: number)
 	local rawSelf = self :: any
 	local now = rawSelf._clock()
 	local position, velocity = _positionVelocity(self, now + delta)
-	rawSelf._position = position
-	rawSelf._velocity = velocity
+	local nextPos = Trigintaduonions.new(position)
+	local nextVel = Trigintaduonions.new(velocity)
+	rawSelf._position = nextPos
+	rawSelf._velocity = nextVel
 	rawSelf._time = now
 	rawSelf._cachedTime = now
-	rawSelf._cachedPosition = position
-	rawSelf._cachedVelocity = velocity
+	rawSelf._cachedPosition = nextPos
+	rawSelf._cachedVelocity = nextVel
 end
 
 TrigintaduonionsSpring.TimeSkip = TimeSkip

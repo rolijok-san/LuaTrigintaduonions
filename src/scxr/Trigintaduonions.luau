@@ -30,13 +30,13 @@ Created by CRIMOFD (2025). Released under the MIT License.
 	this module stops at 32D.)
 
 	Algebraic facts encoded here:
-	  - Power-associative: x^n is unambiguous, so Pow works with any parentheses.
-	  - Flexible: x*(y*x) = (x*y)*x.
-	  - Every non-zero element has a multiplicative inverse: x^-1 = conj(x)/|x|^2,
+- Power-associative: x^n is unambiguous, so Pow works with any parentheses.
+- Flexible: x*(y*x) = (x*y)*x.
+- Every non-zero element has a multiplicative inverse: x^-1 = conj(x)/|x|^2,
 	    because x*conj(x) = |x|^2 * e0 holds in every Cayley-Dickson algebra.
-	  - NOT associative, NOT alternative, and the norm is NOT multiplicative:
+- NOT associative, NOT alternative, and the norm is NOT multiplicative:
 	    |x*y| = |x||y| fails completely.
-	  - Zero divisors exist: two non-zero numbers can multiply to zero, and in 32D
+- Zero divisors exist: two non-zero numbers can multiply to zero, and in 32D
 	    they form large geometric networks ("box-kites"). Use areZeroDivisors to test pairs.
 
 	Cost: multiplying two elements directly performs 1,024 separate real
@@ -51,10 +51,13 @@ Created by CRIMOFD (2025). Released under the MIT License.
 	Trigintaduonions.mul(A, B)   -- also A * B; number * X and X * number scale
 	Trigintaduonions.scale(X, K: number)
 	Trigintaduonions.divScalar(X, K: number)                 -- also X / K for scalar divisor K
+	Trigintaduonions.copyInto(dest, src)   Trigintaduonions.addInto(dest, A, B)
+	Trigintaduonions.subInto(dest, A, B)   Trigintaduonions.scaleInto(dest, X, K)
+	Trigintaduonions.mulInto(dest, A, B)   Trigintaduonions.normalizeInto(dest, X)
 	Trigintaduonions.toBuffer(X, buf?, offset?): buffer      -- writes 32 f64s (256 bytes)
 	Trigintaduonions.fromBuffer(buf, offset?): Trigintaduonion -- reads 32 f64s (256 bytes)
 	Trigintaduonions.conjugate(X)   Trigintaduonions.inverse(X)   Trigintaduonions.normalize(X)
-	  -- inverse/normalize/divScalar throw on invalid/zero input; silently handing back 1 would hide bugs
+	  -- inverse/normalize/normalizeInto/divScalar throw on invalid/zero input; silently handing back 1 would hide bugs
 	Trigintaduonions.dot(A, B)   Trigintaduonions.normSq(X)   Trigintaduonions.norm(X)
 	Trigintaduonions.isZero(X): boolean
 	Trigintaduonions.approxEq(A, B, eps?): boolean   -- the honest equals: |A-B| <= eps per component (default 1e-9).
@@ -272,6 +275,82 @@ function Trigintaduonions.mul(a: Trigintaduonion, b: Trigintaduonion): Trigintad
 	return make(t)
 end
 
+-- Adopts `components` (exactly DIM numbers) as a Trigintaduonion without copying. The caller must not reuse the table.
+function Trigintaduonions.fromArray(components: { number }): Trigintaduonion
+	return make(components)
+end
+
+-- Mutating variants: write into a destination you own and reuse, so hot loops allocate zero tables.
+-- All return `dest`. dest may alias an input (rawequal-checked in mulInto; the others are elementwise-safe).
+local MUL_SCRATCH: { number } = table.create(DIM, 0)
+
+function Trigintaduonions.copyInto(dest: Trigintaduonion, src: Trigintaduonion): Trigintaduonion
+	for i = 1, DIM do
+		dest[i] = src[i]
+	end
+
+	return dest
+end
+
+function Trigintaduonions.addInto(dest: Trigintaduonion, a: Trigintaduonion, b: Trigintaduonion): Trigintaduonion
+	for i = 1, DIM do
+		dest[i] = a[i] + b[i]
+	end
+
+	return dest
+end
+
+function Trigintaduonions.subInto(dest: Trigintaduonion, a: Trigintaduonion, b: Trigintaduonion): Trigintaduonion
+	for i = 1, DIM do
+		dest[i] = a[i] - b[i]
+	end
+
+	return dest
+end
+
+function Trigintaduonions.scaleInto(dest: Trigintaduonion, x: Trigintaduonion, k: number): Trigintaduonion
+	for i = 1, DIM do
+		dest[i] = x[i] * k
+	end
+
+	return dest
+end
+
+function Trigintaduonions.mulInto(dest: Trigintaduonion, a: Trigintaduonion, b: Trigintaduonion): Trigintaduonion
+	-- rawequal, not ==: __eq compares all 32 components and would flag equal-valued distinct tables
+	local aliased = rawequal(dest, a) or rawequal(dest, b)
+	local acc: { number } = if aliased then MUL_SCRATCH else (dest :: any) :: { number }
+
+	for i = 1, DIM do
+		acc[i] = 0
+	end
+
+	for i = 0, DIM - 1 do
+		local ai = a[i + 1]
+
+		if ai ~= 0 then
+			local row = i * DIM
+
+			for j = 0, DIM - 1 do
+				local bj = b[j + 1]
+
+				if bj ~= 0 then
+					local k = bit32.bxor(i, j) + 1
+					acc[k] = acc[k] + SIGN[row + j] * ai * bj
+				end
+			end
+		end
+	end
+
+	if aliased then
+		for i = 1, DIM do
+			dest[i] = acc[i]
+		end
+	end
+
+	return dest
+end
+
 function Trigintaduonions.dot(a: Trigintaduonion, b: Trigintaduonion): number
 	local sum = 0
 
@@ -312,6 +391,13 @@ function Trigintaduonions.normalize(x: Trigintaduonion): Trigintaduonion
 	assert(magnitude >= EPSILON, "cannot normalize a zero trigintaduonion")
 
 	return Trigintaduonions.scale(x, 1 / magnitude)
+end
+
+function Trigintaduonions.normalizeInto(dest: Trigintaduonion, x: Trigintaduonion): Trigintaduonion
+	local magnitude = Trigintaduonions.norm(x)
+	assert(magnitude >= EPSILON, "cannot normalize a zero trigintaduonion")
+
+	return Trigintaduonions.scaleInto(dest, x, 1 / magnitude)
 end
 
 function Trigintaduonions.inverse(x: Trigintaduonion): Trigintaduonion

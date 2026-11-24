@@ -3,14 +3,14 @@
 --[[
 
  ▓▓      ▐▓▓  ▐▓▓   ▐▓▓▓   ▐▓▓▓▓▓▓▓▓ ▐▓▓▓▓▓▓▄ ▐▓▓  ▐▓▓▓▓▓▓ ▐▓▓ ▐▓▓▓▓▄   ▐▓▓▓▓▓▓▓▓   ▐▓▓▓   ▐▓▓▓▓▓   ▐▓▓  ▐▓▓   ▐▓▓▓   ▐▓▓▓▓▄   ▐▓▓   ▐▓▓▓   ▐▓▓▓▓▄    ▐▓▓▓▓▓▓
-▐▓▓      ▐▓▓  ▐▓▓  ▐▓▓▐▓▓     ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓ ▐▓▓     ▐▓▓     ▐▓▓▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓  ▐▓▓▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓
+▐▓▓      ▐▓▓  ▐▓▓  ▐▓▓▐▓▓     ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓ ▐▓▓     ▐▓▓     ▐▓▓▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓
 ▐▓▓      ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓      ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓
 ▐▓▓      ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓      ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓
 ▐▓▓      ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓▐▓▓▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓     
-▐▓▓      ▐▓▓  ▐▓▓ ▐▓▓▓▓▓▓▓    ▐▓▓    ▐▓▓▓▓▓▓▀ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓▓▓▓▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓▓▓▓ 
-▐▒▒      ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒      ▐▒▒
-▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
-▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
+▐▓▓      ▐▓▓  ▐▓▓ ▐▓▓▓▓▓▓▓    ▐▓▓    ▐▓▓▓▓▓▓▀ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓▓▓▓▓▓ ▐▓▓  ▐▓▓  ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓▓▓▓ 
+▐▒▒      ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒      ▐▒▒
+▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░  ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░  ▐░░
+▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░  ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░  ▐░░
 ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
  ▐▓▓▓▓▓   ▐▓▓▓▓▓  ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓▓▓▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓▓▒▒    ▐▓▓▓▓▓    ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓   ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓▓▓▓▓ 
 
@@ -32,6 +32,11 @@ Created by CRIMOFD (2025). Released under the MIT License.
 - Vector3          (3D Euclidean)
 - CFrame           (SE(3): linear R^3 position + shortest-arc S^3 orientation)
 - Trigintaduonion  (32D Cayley-Dickson vector space via fused zero-alloc loops)
+
+    StepInto(delta, destPosition?, destVelocity?) -- TimeSkip's zero-allocation
+    sibling: advances the spring by `delta`, commits the new state, and (for
+    Trigintaduonion springs) writes the results into caller-owned values, so
+    fixed-timestep entity loops allocate nothing per step.
 ]]
 local Trigintaduonions = require(script.Parent.Trigintaduonions)
 type Trigintaduonion = Trigintaduonions.Trigintaduonion
@@ -44,6 +49,8 @@ local LN2 = math.log(2)
 
 local SCRATCH_POS: { number } = table.create(DIM, 0)
 local SCRATCH_VEL: { number } = table.create(DIM, 0)
+local SCRATCH_POS_TRIG: Trigintaduonion = Trigintaduonions.fromArray(SCRATCH_POS)
+local SCRATCH_VEL_TRIG: Trigintaduonion = Trigintaduonions.fromArray(SCRATCH_VEL)
 
 export type nlerpable = number | Vector2 | Vector3 | CFrame | Trigintaduonion
 
@@ -72,6 +79,7 @@ export type Spring<T = nlerpable> = {
 	Impulse: (self: Spring<T>, velocity: T) -> (),
 	Accelerate: (self: Spring<T>, acceleration: T, deltaTime: number) -> (),
 	TimeSkip: (self: Spring<T>, delta: number) -> (),
+	StepInto: (self: Spring<T>, delta: number, destPosition: T?, destVelocity: T?) -> (T, T),
 	Peek: (self: Spring<T>, delta: number) -> (T, T),
 	SampleTrajectory: (self: Spring<T>, duration: number, steps: number) -> { T },
 	IsAtRest: (self: Spring<T>, epsilon: number?) -> boolean,
@@ -92,6 +100,8 @@ export type Spring<T = nlerpable> = {
 	_cachedTime: number,
 	_cachedPosition: T,
 	_cachedVelocity: T,
+	_trigPosCache: Trigintaduonion?,
+	_trigVelCache: Trigintaduonion?,
 }
 
 local Spring = {} :: {
@@ -104,6 +114,7 @@ local Spring = {} :: {
 	Impulse: <T>(self: Spring<T>, velocity: T) -> (),
 	Accelerate: <T>(self: Spring<T>, acceleration: T, deltaTime: number) -> (),
 	TimeSkip: <T>(self: Spring<T>, delta: number) -> (),
+	StepInto: <T>(self: Spring<T>, delta: number, destPosition: T?, destVelocity: T?) -> (T, T),
 	Peek: <T>(self: Spring<T>, delta: number) -> (T, T),
 	SampleTrajectory: <T>(self: Spring<T>, duration: number, steps: number) -> { T },
 	IsAtRest: <T>(self: Spring<T>, epsilon: number?) -> boolean,
@@ -224,19 +235,14 @@ local function quatExpApply(
 	return x1 * invLen, y1 * invLen, z1 * invLen, w1 * invLen
 end
 
-local function evaluateState(
-	kind: number,
-	currentPosition: any,
-	currentVelocity: any,
-	targetPosition: any,
+-- Closed-form step coefficients shared by evaluateState and StepInto:
+-- pullToTarget / velPosPush rebuild the position, velPushRate / velocityDecay
+-- rebuild the velocity.
+local function stepFactors(
 	dampingFactor: number,
 	speed: number,
 	dt: number
-): (any, any)
-	if dt <= 0 or speed <= 0 then
-		return currentPosition, currentVelocity
-	end
-
+): (number, number, number, number)
 	local deltaTime = speed * dt
 	local dampingSquared = dampingFactor * dampingFactor
 
@@ -263,6 +269,26 @@ local function evaluateState(
 	local velPushRate = speed * sinTheta
 	local velocityDecay = angFreq * cosTheta - dampingFactor * sinTheta
 
+	return pullToTarget, velPosPush, velPushRate, velocityDecay
+end
+
+local function evaluateState(
+	kind: number,
+	currentPosition: any,
+	currentVelocity: any,
+	targetPosition: any,
+	dampingFactor: number,
+	speed: number,
+	dt: number,
+	trigPosDest: Trigintaduonion?,
+	trigVelDest: Trigintaduonion?
+): (any, any)
+	if dt <= 0 or speed <= 0 then
+		return currentPosition, currentVelocity
+	end
+
+	local pullToTarget, velPosPush, velPushRate, velocityDecay = stepFactors(dampingFactor, speed, dt)
+
 	if kind == KIND_TRIGINTADUONION then
 		local p = currentPosition :: Trigintaduonion
 		local v = currentVelocity :: Trigintaduonion
@@ -274,6 +300,12 @@ local function evaluateState(
 			local diff = t[i] - pi
 			SCRATCH_POS[i] = pi + diff * pullToTarget + vi * velPosPush
 			SCRATCH_VEL[i] = diff * velPushRate + vi * velocityDecay
+		end
+
+		if trigPosDest ~= nil and trigVelDest ~= nil then
+			Trigintaduonions.copyInto(trigPosDest, SCRATCH_POS_TRIG)
+			Trigintaduonions.copyInto(trigVelDest, SCRATCH_VEL_TRIG)
+			return trigPosDest, trigVelDest
 		end
 
 		return Trigintaduonions.new(SCRATCH_POS), Trigintaduonions.new(SCRATCH_VEL)
@@ -343,6 +375,9 @@ local function _positionVelocity<T>(self: Spring<T>, now: number): (T, T)
 		return rawSelf._cachedPosition :: T, rawSelf._cachedVelocity :: T
 	end
 
+	local posDest: Trigintaduonion? = if rawSelf._kind == KIND_TRIGINTADUONION then rawSelf._trigPosCache else nil
+	local velDest: Trigintaduonion? = if rawSelf._kind == KIND_TRIGINTADUONION then rawSelf._trigVelCache else nil
+
 	local newPosition, newVelocity = evaluateState(
 		rawSelf._kind,
 		rawSelf._position,
@@ -350,7 +385,9 @@ local function _positionVelocity<T>(self: Spring<T>, now: number): (T, T)
 		rawSelf._target,
 		rawSelf._damping,
 		rawSelf._speed,
-		now - rawSelf._time
+		now - rawSelf._time,
+		posDest,
+		velDest
 	)
 
 	rawSelf._cachedTime = now
@@ -451,6 +488,9 @@ function Spring.new<T>(initial: T, damping: number?, speed: number?, clock: (() 
 	local kind = classifyValue(initial)
 	local zeroVel = zeroOf(kind, initial) :: T
 
+	local trigPosCache: Trigintaduonion? = if kind == KIND_TRIGINTADUONION then Trigintaduonions.new() else nil
+	local trigVelCache: Trigintaduonion? = if kind == KIND_TRIGINTADUONION then Trigintaduonions.new() else nil
+
 	local self = {
 		_clock = l_clock,
 		_time = now,
@@ -464,6 +504,8 @@ function Spring.new<T>(initial: T, damping: number?, speed: number?, clock: (() 
 		_cachedTime = now,
 		_cachedPosition = initial,
 		_cachedVelocity = zeroVel,
+		_trigPosCache = trigPosCache,
+		_trigVelCache = trigVelCache,
 	}
 
 	return (setmetatable(self, Spring) :: any) :: Spring<T>
@@ -577,24 +619,113 @@ local function TimeSkip<T>(self: Spring<T>, delta: number)
 	local rawSelf = self :: any
 	local now = rawSelf._clock()
 	local position, velocity = _positionVelocity(self, now + delta)
-	rawSelf._position = position
-	rawSelf._velocity = velocity
+	if rawSelf._kind == KIND_TRIGINTADUONION then
+		-- Own fresh Trigintaduonions for committed _position/_velocity so subsequent
+		-- uncached evaluations overwriting _trigPosCache/_trigVelCache don't mutate them.
+		local nextPos = Trigintaduonions.new(position)
+		local nextVel = Trigintaduonions.new(velocity)
+		rawSelf._position = nextPos
+		rawSelf._velocity = nextVel
+		rawSelf._cachedPosition = nextPos
+		rawSelf._cachedVelocity = nextVel
+	else
+		rawSelf._position = position
+		rawSelf._velocity = velocity
+		rawSelf._cachedPosition = position
+		rawSelf._cachedVelocity = velocity
+	end
 	rawSelf._time = now
 	rawSelf._cachedTime = now
-	rawSelf._cachedPosition = position
-	rawSelf._cachedVelocity = velocity
 end
 
 Spring.TimeSkip = TimeSkip
+
+-- TimeSkip's zero-allocation sibling: advances the spring by `delta`, commits
+-- the new state, and for Trigintaduonion springs writes the components into
+-- caller-owned `destPosition` / `destVelocity` values instead of allocating.
+-- Non-32D kinds ignore the destinations (their values are immutable anyway).
+local function StepInto<T>(self: Spring<T>, delta: number, destPosition: T?, destVelocity: T?): (T, T)
+	if destPosition ~= nil and destVelocity ~= nil then
+		assert(not rawequal(destPosition, destVelocity), "StepInto destPosition and destVelocity must be distinct values")
+	end
+
+	local rawSelf = self :: any
+	local now = rawSelf._clock()
+	local posNow, velNow = _positionVelocity(self, now)
+
+	local newPosition: any
+	local newVelocity: any
+
+	if rawSelf._kind == KIND_TRIGINTADUONION then
+		local p = (posNow :: any) :: Trigintaduonion
+		local v = (velNow :: any) :: Trigintaduonion
+		local target = (rawSelf._target :: any) :: Trigintaduonion
+		local outPos = if destPosition ~= nil
+			then (destPosition :: any) :: Trigintaduonion
+			else Trigintaduonions.new()
+		local outVel = if destVelocity ~= nil
+			then (destVelocity :: any) :: Trigintaduonion
+			else Trigintaduonions.new()
+		local speed = rawSelf._speed
+
+		if delta <= 0 or speed <= 0 then
+			for i = 1, DIM do
+				outPos[i] = p[i]
+				outVel[i] = v[i]
+			end
+		else
+			local pullToTarget, velPosPush, velPushRate, velocityDecay = stepFactors(rawSelf._damping, speed, delta)
+			-- Reads happen before writes within each index, so the destinations
+			-- may safely alias the spring's current position, velocity, or target.
+			for i = 1, DIM do
+				local pi = p[i]
+				local vi = v[i]
+				local diff = target[i] - pi
+				outPos[i] = pi + diff * pullToTarget + vi * velPosPush
+				outVel[i] = diff * velPushRate + vi * velocityDecay
+			end
+		end
+
+		newPosition, newVelocity = outPos, outVel
+	else
+		newPosition, newVelocity = evaluateState(
+			rawSelf._kind,
+			posNow,
+			velNow,
+			rawSelf._target,
+			rawSelf._damping,
+			rawSelf._speed,
+			delta,
+			nil,
+			nil
+		)
+	end
+
+	rawSelf._position = newPosition
+	rawSelf._velocity = newVelocity
+	rawSelf._time = now
+	rawSelf._cachedTime = now
+	rawSelf._cachedPosition = newPosition
+	rawSelf._cachedVelocity = newVelocity
+
+	return newPosition :: T, newVelocity :: T
+end
+
+Spring.StepInto = StepInto
 
 local function Peek<T>(self: Spring<T>, delta: number): (T, T)
 	local rawSelf = self :: any
 	local now = rawSelf._clock()
 	local posNow, velNow = _positionVelocity(self, now)
 	if delta == 0 then
+		if rawSelf._kind == KIND_TRIGINTADUONION then
+			local p = (Trigintaduonions.new(posNow :: any) :: any) :: T
+			local v = (Trigintaduonions.new(velNow :: any) :: any) :: T
+			return p, v
+		end
 		return posNow, velNow
 	end
-	local p, v = evaluateState(rawSelf._kind, posNow, velNow, rawSelf._target, rawSelf._damping, rawSelf._speed, delta)
+	local p, v = evaluateState(rawSelf._kind, posNow, velNow, rawSelf._target, rawSelf._damping, rawSelf._speed, delta, nil, nil)
 	return p :: T, v :: T
 end
 
@@ -605,7 +736,10 @@ local function SampleTrajectory<T>(self: Spring<T>, duration: number, steps: num
 	local rawSelf = self :: any
 	local now = rawSelf._clock()
 	local posNow, velNow = _positionVelocity(self, now)
-	local samples = table.create(steps + 1, posNow)
+	local firstSample: T = if rawSelf._kind == KIND_TRIGINTADUONION
+		then ((Trigintaduonions.new(posNow :: any) :: any) :: T)
+		else posNow
+	local samples = table.create(steps + 1, firstSample)
 
 	local kind = rawSelf._kind
 	local target = rawSelf._target
@@ -614,7 +748,7 @@ local function SampleTrajectory<T>(self: Spring<T>, duration: number, steps: num
 	local dt = duration / steps
 
 	for stepIdx = 1, steps do
-		local p, _ = evaluateState(kind, posNow, velNow, target, damping, speed, dt * stepIdx)
+		local p, _ = evaluateState(kind, posNow, velNow, target, damping, speed, dt * stepIdx, nil, nil)
 		samples[stepIdx + 1] = p :: T
 	end
 
@@ -783,6 +917,7 @@ function Spring.__newindex<T>(self: Spring<T>, index: string, value: any)
 		rawSelf._speed = math.max(0, value) * TWO_PI
 		rawSelf._time = now
 	elseif index == "Clock" then
+		assert(typeof(value) == "function", "Spring.Clock must be a function")
 		local position, velocity = _positionVelocity(self, now)
 		rawSelf._position = position
 		rawSelf._velocity = velocity

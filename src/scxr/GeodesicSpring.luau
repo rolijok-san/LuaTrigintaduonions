@@ -9,9 +9,9 @@
 ▐▓▓      ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓▐▓▓▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓     
 ▐▓▓      ▐▓▓  ▐▓▓ ▐▓▓▓▓▓▓▓    ▐▓▓    ▐▓▓▓▓▓▓▀ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓▓▓▓▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓ ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓  ▐▓▓▓▓▓ 
 ▐▒▒      ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒      ▐▒▒
-▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
-▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
-▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
+▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░  ▐░░
+▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░  ▐░░
+▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
  ▐▓▓▓▓▓   ▐▓▓▓▓▓  ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓▓▓▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓▓▒▒    ▐▓▓▓▓▓    ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓   ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓▓▓▓▓ 
 
 GeodesicSpring -- Great-arc spherical geodesic spring with substepping.
@@ -27,11 +27,12 @@ Created by CRIMOFD (2025). Released under the MIT License.
 	  nabla_{dp/dt}(dp/dt) + 2*zeta*omega_0*(dp/dt) + omega_0^2 * log_p(target) = 0
 
 	Key properties:
-	  - Zero-allocation inner integrator using preallocated 32D scratch buffers
-	  - Exact single-step analytical jump for 1D geodesic (collinear) motion
-	  - Adaptive curvature-preserving sub-stepping with isometric Levi-Civita
+- Zero-allocation inner integrator and substep loop using preallocated 32D scratch buffers
+- Zero-allocation cached state updates via Trigintaduonions.copyInto
+- Exact single-step analytical jump for 1D geodesic (collinear) motion
+- Adaptive curvature-preserving sub-stepping (up to 64 substeps) with isometric Levi-Civita
 	    parallel transport when transverse angular momentum (orbiting) is present
-	  - Trajectory prediction (Peek, SampleTrajectory), closed-orbit injection
+- Trajectory prediction (Peek, SampleTrajectory), closed-orbit injection
 	    (OrbitImpulse), and raw binary buffer serialization (PackState, LoadState)
 ]]
 
@@ -46,7 +47,8 @@ local MAX_SUBSTEPS = 64
 
 local ZERO = Trigintaduonions.new()
 
--- Module-level scratch buffers to eliminate intermediate GC allocations per evaluation
+-- Module-level scratch arrays & wrapped Trigintaduonion views to eliminate GC allocations
+-- across substeps and uncached evaluations.
 local SCRATCH_P: { number } = table.create(DIM, 0)
 local SCRATCH_V: { number } = table.create(DIM, 0)
 local SCRATCH_U0: { number } = table.create(DIM, 0)
@@ -54,6 +56,9 @@ local SCRATCH_DX: { number } = table.create(DIM, 0)
 local SCRATCH_VPRE: { number } = table.create(DIM, 0)
 local SCRATCH_PNEXT: { number } = table.create(DIM, 0)
 local SCRATCH_VNEXT: { number } = table.create(DIM, 0)
+
+local SCRATCH_P_TRIG: Trigintaduonion = Trigintaduonions.fromArray(SCRATCH_P)
+local SCRATCH_V_TRIG: Trigintaduonion = Trigintaduonions.fromArray(SCRATCH_V)
 
 export type GeodesicSpring = {
 	Position: Trigintaduonion,
@@ -93,6 +98,8 @@ export type GeodesicSpring = {
 	_cachedTime: number,
 	_cachedPosition: Trigintaduonion,
 	_cachedVelocity: Trigintaduonion,
+	_cachePosBuf: Trigintaduonion,
+	_cacheVelBuf: Trigintaduonion,
 }
 
 local GeodesicSpring = {} :: {
@@ -120,13 +127,30 @@ local GeodesicSpring = {} :: {
 GeodesicSpring._type = "GeodesicSpring"
 
 local function tangentAt(position: Trigintaduonion, vector: Trigintaduonion): Trigintaduonion
+	local posNormSq = 0
+	for i = 1, DIM do
+		local pi = position[i]
+		posNormSq += pi * pi
+	end
+
+	local unitPos = position
+	if posNormSq <= 1e-18 then
+		return Trigintaduonions.new()
+	elseif math.abs(posNormSq - 1) > 1e-6 then
+		local invNorm = 1 / math.sqrt(posNormSq)
+		for i = 1, DIM do
+			SCRATCH_P[i] = position[i] * invNorm
+		end
+		unitPos = SCRATCH_P_TRIG
+	end
+
 	local dotProd = 0
 	for i = 1, DIM do
-		dotProd += position[i] * vector[i]
+		dotProd += unitPos[i] * vector[i]
 	end
 
 	for i = 1, DIM do
-		SCRATCH_VNEXT[i] = vector[i] - dotProd * position[i]
+		SCRATCH_VNEXT[i] = vector[i] - dotProd * unitPos[i]
 	end
 
 	return Trigintaduonions.new(SCRATCH_VNEXT)
@@ -353,7 +377,7 @@ local function stepGeodesicSingle(
 	end
 end
 
--- Integrates (p0, v0) toward pT over `dt` into SCRATCH_P / SCRATCH_V
+-- Integrates (p0, v0) toward pT over `dt` into SCRATCH_P / SCRATCH_V with zero allocations
 local function integrateTrajectory(
 	p0: Trigintaduonion,
 	v0: Trigintaduonion,
@@ -362,10 +386,8 @@ local function integrateTrajectory(
 	speed: number,
 	dt: number
 )
-	for i = 1, DIM do
-		SCRATCH_P[i] = p0[i]
-		SCRATCH_V[i] = v0[i]
-	end
+	Trigintaduonions.copyInto(SCRATCH_P_TRIG, p0)
+	Trigintaduonions.copyInto(SCRATCH_V_TRIG, v0)
 
 	if dt <= 0 or speed <= 0 then
 		return
@@ -408,7 +430,7 @@ local function integrateTrajectory(
 		return
 	end
 
-	-- Subdivide curved orbital trajectories so sectional curvature K = +1 is accurately tracked
+	-- Subdivide curved orbital trajectories (up to MAX_SUBSTEPS = 64) with zero allocations
 	local substeps = math.min(MAX_SUBSTEPS, math.max(2, math.ceil(dxEst / MAX_SUBSTEP_ANGLE)))
 	local subDt = dt / substeps
 	local subPull, subVelPos, subVelRate, subVelDecay =
@@ -438,6 +460,8 @@ local function integrateTrajectory(
 	end
 end
 
+-- Uncached evaluation reuses the spring's pre-allocated _cachePosBuf / _cacheVelBuf
+-- instead of allocating 2 fresh Trigintaduonion objects every uncached call.
 local function _positionVelocity(self: GeodesicSpring, now: number): (Trigintaduonion, Trigintaduonion)
 	if now == self._cachedTime then
 		return self._cachedPosition, self._cachedVelocity
@@ -460,14 +484,14 @@ local function _positionVelocity(self: GeodesicSpring, now: number): (Trigintadu
 		dt
 	)
 
-	local newPosition = Trigintaduonions.new(SCRATCH_P)
-	local newVelocity = Trigintaduonions.new(SCRATCH_V)
+	Trigintaduonions.copyInto(self._cachePosBuf, SCRATCH_P_TRIG)
+	Trigintaduonions.copyInto(self._cacheVelBuf, SCRATCH_V_TRIG)
 
 	self._cachedTime = now
-	self._cachedPosition = newPosition
-	self._cachedVelocity = newVelocity
+	self._cachedPosition = self._cachePosBuf
+	self._cachedVelocity = self._cacheVelBuf
 
-	return newPosition, newVelocity
+	return self._cachePosBuf, self._cacheVelBuf
 end
 
 function GeodesicSpring.new(
@@ -482,6 +506,10 @@ function GeodesicSpring.new(
 	local l_clock = clock or os.clock
 	local now = l_clock()
 
+	local cachePosBuf = Trigintaduonions.new()
+	local cacheVelBuf = Trigintaduonions.new()
+	Trigintaduonions.copyInto(cachePosBuf, l_initial)
+
 	local self = {
 		_clock = l_clock,
 		_time = now,
@@ -494,6 +522,8 @@ function GeodesicSpring.new(
 		_cachedTime = now,
 		_cachedPosition = l_initial,
 		_cachedVelocity = ZERO,
+		_cachePosBuf = cachePosBuf,
+		_cacheVelBuf = cacheVelBuf,
 	}
 
 	return (setmetatable(self, GeodesicSpring) :: any) :: GeodesicSpring
@@ -532,8 +562,8 @@ local function OrbitImpulse(self: GeodesicSpring, planeHint: Trigintaduonion?)
 	local pos, _ = _positionVelocity(self, now)
 	local target = self._target
 
+	Trigintaduonions.copyInto(SCRATCH_P_TRIG, pos)
 	for i = 1, DIM do
-		SCRATCH_P[i] = pos[i]
 		SCRATCH_V[i] = 0
 	end
 
@@ -609,12 +639,15 @@ GeodesicSpring.OrbitImpulse = OrbitImpulse
 local function TimeSkip(self: GeodesicSpring, delta: number)
 	local now = self._clock()
 	local position, velocity = _positionVelocity(self, now + delta)
-	self._position = position
-	self._velocity = velocity
+	-- Copy into owned buffers so subsequent uncached _positionVelocity calls don't overwrite _position/_velocity
+	local nextPos = Trigintaduonions.new(position)
+	local nextVel = Trigintaduonions.new(velocity)
+	self._position = nextPos
+	self._velocity = nextVel
 	self._time = now
 	self._cachedTime = now
-	self._cachedPosition = position
-	self._cachedVelocity = velocity
+	self._cachedPosition = nextPos
+	self._cachedVelocity = nextVel
 end
 
 GeodesicSpring.TimeSkip = TimeSkip
@@ -623,7 +656,7 @@ local function Peek(self: GeodesicSpring, delta: number): (Trigintaduonion, Trig
 	local now = self._clock()
 	local posNow, velNow = _positionVelocity(self, now)
 	if delta == 0 then
-		return posNow, velNow
+		return Trigintaduonions.new(posNow), Trigintaduonions.new(velNow)
 	end
 
 	integrateTrajectory(posNow, velNow, self._target, self._damping, self._speed, delta)
@@ -640,7 +673,10 @@ local function SampleTrajectory(self: GeodesicSpring, duration: number, steps: n
 	local damping = self._damping
 	local speed = self._speed
 
-	local samples = table.create(steps + 1, pos)
+	local initialSample = Trigintaduonions.new(pos)
+	local samples = table.create(steps + 1, initialSample)
+	samples[1] = initialSample
+	pos = initialSample
 
 	local dt = duration / steps
 	for stepIdx = 1, steps do

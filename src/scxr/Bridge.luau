@@ -10,7 +10,7 @@
 ▐▒▒      ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒      ▐▒▒
 ▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
 ▐░░      ▐░░  ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░    ▐░░    ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░ ▐░░  ▐░░ ▐░░  ▐░░ ▐░░  ▐░░
-▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
+▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒ ▐▒▒ ▐▒▒  ▐▒▒    ▐▒▒    ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒  ▐▒▒▐▒▒  ▐▒▒  ▐▒▒ ▐▒▒  ▐▒▒
  ▐▓▓▓▓▓   ▐▓▓▓▓▓  ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓  ▐▓▓▓▓▓▓ ▐▓▓ ▐▓▓  ▐▓▓    ▐▓▓    ▐▓▓  ▐▓▓ ▐▓▓▓▒▒    ▐▓▓▓▓▓    ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓   ▐▓▓▓   ▐▓▓  ▐▓▓ ▐▓▓▓▓▓▓ 
 
 Bridge -- Conversions between 32D Trigintaduonions, 4D quaternions, Vector3, and CFrame.
@@ -112,7 +112,7 @@ function Bridge.fromQuaternion(q: QuaternionLike): Trigintaduonion
 end
 
 function Bridge.toQuaternion(x: Trigintaduonion): any
-	return getQuaternionBackend().new(x[2] or 0, x[3] or 0, x[4] or 0, x[1] or 0)
+	return getQuaternionBackend().new(x[2], x[3], x[4], x[1])
 end
 
 function Bridge.fromVector3(v: Vector3): Trigintaduonion
@@ -120,7 +120,7 @@ function Bridge.fromVector3(v: Vector3): Trigintaduonion
 end
 
 function Bridge.toVector3(x: Trigintaduonion): Vector3
-	return Vector3.new(x[2] or 0, x[3] or 0, x[4] or 0)
+	return Vector3.new(x[2], x[3], x[4])
 end
 
 function Bridge.fromCFrame(cframe: CFrame): Trigintaduonion
@@ -130,13 +130,13 @@ function Bridge.fromCFrame(cframe: CFrame): Trigintaduonion
 end
 
 function Bridge.toCFrame(x: Trigintaduonion): CFrame
-	local qW: number = x[1] or 0
-	local qX: number = x[2] or 0
-	local qY: number = x[3] or 0
-	local qZ: number = x[4] or 0
-	local px: number = x[5] or 0
-	local py: number = x[6] or 0
-	local pz: number = x[7] or 0
+	local qW: number = x[1]
+	local qX: number = x[2]
+	local qY: number = x[3]
+	local qZ: number = x[4]
+	local px: number = x[5]
+	local py: number = x[6]
+	local pz: number = x[7]
 
 	local normSq = qW * qW + qX * qX + qY * qY + qZ * qZ
 	if normSq < EPSILON then
@@ -160,7 +160,7 @@ function Bridge.project3D(x: Trigintaduonion, axisA: number?, axisB: number?, ax
 	checkAxis(c, "axisC")
 	assert(a ~= b and a ~= c and b ~= c, "project3D axes must be distinct")
 
-	return Vector3.new(x[a + 1] or 0, x[b + 1] or 0, x[c + 1] or 0)
+	return Vector3.new(x[a + 1], x[b + 1], x[c + 1])
 end
 
 return Bridge
